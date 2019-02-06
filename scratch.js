@@ -39,7 +39,7 @@ const errors = {
     insertErrorMessage: (targetDOM, elementError) => targetDOM.insertHTMLAdjacent('beforeend', elementError()),
 };
 
-const submithandler = (e) => {
+const submitHandler = (e) => {
     e.preventDefault();
 
     let payload = {
