@@ -39,7 +39,7 @@ const errors = {
     insertErrorMessage: (targetDOM, elementError) => targetDOM.insertHTMLAdjacent('beforeend', elementError()),
 };
 
-$form.on('submit', (e) => {
+const submithandler = (e) => {
     e.preventDefault();
 
     let payload = {
@@ -86,4 +86,8 @@ $form.on('submit', (e) => {
     // if status 200
 
     // show sucess message
-});
+};
+    
+}
+
+$form.on('submit', submitHandler);
