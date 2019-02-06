@@ -35,8 +35,11 @@ const validation = {
 };
 
 const errors = {
-    elementError: (message, className = 'error-message') => `<span class="${className}">${message}</span>`,
-    insertErrorMessage: (targetDOM, elementError) => targetDOM.insertHTMLAdjacent('beforeend', elementError()),
+    elementName: 'span',
+    className: 'error-message',
+    errorHandler: (field) => field,
+    _elementError: (message, elementName = 'span', className = 'error-message') => `<${elementName} class="${className}">${message}</${elementName}>`,
+    _insertErrorMessage: (targetDOM, elementError) => this.errorHandler().insertHTMLAdjacent('beforeend', elementError()),
 };
 
 const submitHandler = (e) => {
@@ -87,7 +90,7 @@ const submitHandler = (e) => {
 
     // show sucess message
 };
-    
+
 }
 
 $form.on('submit', submitHandler);
